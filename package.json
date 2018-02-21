@@ -1,0 +1,43 @@
+{
+  "name": "react-and-es6-with-js-standard",
+  "displayName": "React-And-ES6-With-JS-Standard",
+  "description": "Code snippets for React and ES6 with JS Standard",
+  "version": "1.0.0",
+  "publisher": "g1eny0ung",
+  "icon": "images/icon.png",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/g1eny0ung/vscode-react-and-es6-with-js-standard",
+  "bugs": {
+      "url": "https://github.com/g1eny0ung/vscode-react-and-es6-with-js-standard/issues",
+      "email": "g1enyy0ung@gmail.com"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/g1eny0ung/vscode-react-and-es6-with-js-standard.git"
+  },
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": ["Snippets"],
+  "keywords": ["snippets", "react", "es6", "javascript", "standard"],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}

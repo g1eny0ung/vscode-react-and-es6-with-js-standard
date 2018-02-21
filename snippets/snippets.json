@@ -1,0 +1,446 @@
+{
+  "import": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}'$0",
+    "description": "Import entire module statement in ES6 syntax"
+  },
+  "importNoModuleName": {
+    "prefix": "imn",
+    "body": "import '${1:module}'$0",
+    "description": "Import entire module in ES6 syntax without module name"
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": "import { $2 } from '${1:module}'$0",
+    "description": "Import only a portion of the module in ES6 syntax"
+  },
+  "importEverything": {
+    "prefix": "ime",
+    "body": "import * as ${2:alias} from '${1:module}'$0",
+    "description": "Import everything as alias from the module in ES6 syntax"
+  },
+  "importAs": {
+    "prefix": "ima",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
+    "description":
+      "Import a specific portion of the module by assigning a local alias in ES6 syntax"
+  },
+  "exportNamedFunction": {
+    "prefix": "enf",
+    "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n}\n",
+    "description": "Export named function in ES6 syntax"
+  },
+  "exportDefaultFunction": {
+    "prefix": "edf",
+    "body": "export default (${1:params}) => {\n\t$0\n}\n",
+    "description": "Export default function in ES6 syntax"
+  },
+  "exportClass": {
+    "prefix": "ecl",
+    "body": "export default class ${1:className} {\n\t$0\n}\n",
+    "description": "Export default class in ES6 syntax"
+  },
+  "exportClassExtends": {
+    "prefix": "ece",
+    "body":
+      "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
+    "description": "Export default class which extends a base one in ES6 syntax"
+  },
+  "class": {
+    "prefix": "cla",
+    "body": "class ${1:className} {\n\t${0}\n}",
+    "description": "Create a basic class in ES6 syntax"
+  },
+  "classExtends": {
+    "prefix": "clae",
+    "body": "class ${1:className} extends ${2:baseclassName} {\n\t${0}\n}",
+    "description": "Create a basic class with extends in ES6 syntax"
+  },
+  "constructor": {
+    "prefix": "con",
+    "body": "constructor(${1:params}) {\n\t${0}\n}",
+    "description": "Add default constructor in a class in ES6 syntax"
+  },
+  "method": {
+    "prefix": "met",
+    "body": "${1:methodName}(${2:params}) {\n\t${0}\n}",
+    "description": "Create a method inside a class in ES6 syntax"
+  },
+  "propertyGet": {
+    "prefix": "pge",
+    "body": "get ${1:propertyName}() {\n\treturn this.${0}\n}",
+    "description": "Create a getter property inside a class in ES6 syntax"
+  },
+  "propertyset": {
+    "prefix": "pse",
+    "body": "set ${1:propertyName}(${2:value}) {\n\t${0}\n}",
+    "description": "Create a setter property inside a class in ES6 syntax"
+  },
+  "forEach": {
+    "prefix": "fea",
+    "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
+    "description": "Creates a forEach statement in ES6 syntax"
+  },
+  "forOf": {
+    "prefix": "fof",
+    "body": "for (const ${1:item} of ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property names of iterable objects"
+  },
+  "forIn": {
+    "prefix": "fin",
+    "body": "for (const ${1:item} in ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property values of iterable objects"
+  },
+  "anonymousFunction": {
+    "prefix": "anfn",
+    "body": "(${1:params}) => {\n\t${2}\n}",
+    "description": "Creates an anonymous function in ES6 syntax"
+  },
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": "const ${1:name} = (${2:params}) => {\n\t${3}\n}",
+    "description": "Creates a named function in ES6 syntax"
+  },
+  "destructingObject": {
+    "prefix": "dob",
+    "body": "const {${1:propertyName}} = ${2:objectToDestruct}",
+    "description":
+      "Creates and assigns a local variable using object destructing"
+  },
+  "destructingArray": {
+    "prefix": "dar",
+    "body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
+    "description":
+      "Creates and assigns a local variable using array destructing"
+  },
+  "setInterval": {
+    "prefix": "sti",
+    "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms})",
+    "description":
+      "Executes the given function at specified intervals in ES6 syntax"
+  },
+  "setTimeOut": {
+    "prefix": "sto",
+    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms})",
+    "description":
+      "Executes the given function after the specified delay in ES6 syntax"
+  },
+  "promise": {
+    "prefix": "prom",
+    "body": "new Promise((resolve, reject) => {\n\t${1}\n})",
+    "description": "Creates a new Promise in the standard ES6 syntax"
+  },
+  "consoleAssert": {
+    "prefix": "cas",
+    "body": "console.assert(${1:expression}, ${2:object})",
+    "description":
+      "If the specified expression is false, the message is written to the console along with a stack trace"
+  },
+  "consoleClear": {
+    "prefix": "ccl",
+    "body": "console.clear()",
+    "description": "Clears the console"
+  },
+  "consoleCount": {
+    "prefix": "cco",
+    "body": "console.count(${1:label})",
+    "description":
+      "Writes the the number of times that count() has been invoked at the same line and with the same label"
+  },
+  "consoleError": {
+    "prefix": "cer",
+    "body": "console.error(${1:object})",
+    "description":
+      "Displays a message in the console and also includes a stack trace from where the method was called"
+  },
+  "consoleGroup": {
+    "prefix": "cgr",
+    "body": "console.group('${1:label}')",
+    "description":
+      "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+  },
+  "consoleGroupEnd": {
+    "prefix": "cge",
+    "body": "console.groupEnd()",
+    "description": "Closes out the corresponding console.group()."
+  },
+  "consoleLog": {
+    "prefix": "clg",
+    "body": "console.log(${1:object})",
+    "description": "Displays a message in the console"
+  },
+  "consoleTrace": {
+    "prefix": "ctr",
+    "body": "console.trace(${1:object})",
+    "description":
+      "Prints a stack trace from the point where the method was called"
+  },
+  "consoleWarn": {
+    "prefix": "cwa",
+    "body": "console.warn(${1:object})",
+    "description":
+      "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+  },
+  "consoleInfo": {
+    "prefix": "cin",
+    "body": "console.info(${1:object})",
+    "description":
+      "Displays a message in the console but also displays a blue information icon along with the logged message"
+  },
+  "consoleTable": {
+    "prefix": "clt",
+    "body": "console.table(${1:object})",
+    "description": "Displays tabular data as a table."
+  },
+  "reactClassComponent": {
+    "prefix": "rcc",
+    "body":
+      "import React, { Component } from 'react'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1:componentName}",
+    "description": "Creates a React component class with ES6 module system"
+  },
+  "reactReduxComponent": {
+    "prefix": "rrc",
+    "body":
+      "import React, { Component } from 'react'\nimport PropTypes from 'prop-types'\nimport { connect } from 'react-redux'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n}\n\nfunction mapStateToProps(state) {\n\treturn {\n\n\t}\n}\n\nexport default connect(\n\tmapStateToProps,\n)(${1:componentName})",
+    "description": "Creates a React component class connected to redux"
+  },
+  "reactClassComponentPropTypes": {
+    "prefix": "rccp",
+    "body":
+      "import React, { Component } from 'react'\nimport PropTypes from 'prop-types'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n}\n\nexport default ${1:componentName}",
+    "description":
+      "Creates a React component class with PropTypes and ES6 module system"
+  },
+  "reactPureComponent": {
+    "prefix": "rpc",
+    "body":
+      "import React, { PureComponent } from 'react'\nimport PropTypes from 'prop-types'\n\nclass ${1:componentName} extends PureComponent {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n}\n\nexport default ${1:componentName}",
+    "description":
+      "Creates a React pure component class with PropTypes and ES6 module system"
+  },
+  "classConstructor": {
+    "prefix": "con",
+    "body": "constructor(props) {\n\tsuper(props)\n\t$0\n}\n",
+    "description":
+      "Adds a default constructor for the class that contains props as arguments"
+  },
+  "emptyState": {
+    "prefix": "est",
+    "body": "this.state = {\n\t$1\n}",
+    "description": "Creates empty state object. To be used in a constructor."
+  },
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": "\ncomponentWillMount() {\n\t$0\n}\n",
+    "description":
+      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": "componentDidMount() {\n\t$0\n}\n",
+    "description":
+      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+  },
+  "componentWillReceiveProps": {
+    "prefix": "cwr",
+    "body": "componentWillReceiveProps(nextProps) {\n\t$0\n}\n",
+    "description":
+      "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "shouldComponentUpdate": {
+    "prefix": "scu",
+    "body": "shouldComponentUpdate(nextProps, nextState) {\n\t$0\n}\n",
+    "description":
+      "Invoked before rendering when new props or state are being received. "
+  },
+  "componentWillUpdate": {
+    "prefix": "cwup",
+    "body": "componentWillUpdate(nextProps, nextState) {\n\t$0\n}\n",
+    "description":
+      "Invoked immediately before rendering when new props or state are being received."
+  },
+  "componentDidUpdate": {
+    "prefix": "cdup",
+    "body": "componentDidUpdate(prevProps, prevState) {\n\t$0\n}\n",
+    "description":
+      "Invoked immediately after the component's updates are flushed to the DOM."
+  },
+  "componentWillUnmount": {
+    "prefix": "cwun",
+    "body": "componentWillUnmount() {\n\t$0\n}\n",
+    "description":
+      "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "componentSetStateObject": {
+    "prefix": "sst",
+    "body": "this.setState($0)",
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+  "componentSetStateFunc": {
+    "prefix": "ssf",
+    "body": "this.setState((state, props) => { return { $0 }})\n",
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+  "propTypes": {
+    "prefix": "rpt",
+    "body": "$1.propTypes = {\n\t$2\n}",
+    "description": "Creates empty propTypes declaration"
+  },
+  "defaultProps": {
+    "prefix": "rdp",
+    "body": "$1.defaultProps = {\n\t$2\n}",
+    "description": "Creates empty defaultProps declaration"
+  },
+
+
+  "propTypeArray": {
+    "prefix": "pta",
+    "body": "PropTypes.array,",
+    "description": "Array prop type"
+  },
+  "propTypeArrayRequired": {
+    "prefix": "ptar",
+    "body": "PropTypes.array.isRequired,",
+    "description": "Array prop type required"
+  },
+  "propTypeBool": {
+    "prefix": "ptb",
+    "body": "PropTypes.bool,",
+    "description": "Bool prop type"
+  },
+  "propTypeBoolRequired": {
+    "prefix": "ptbr",
+    "body": "PropTypes.bool.isRequired,",
+    "description": "Bool prop type required"
+  },
+  "propTypeFunc": {
+    "prefix": "ptf",
+    "body": "PropTypes.func,",
+    "description": "Func prop type"
+  },
+  "propTypeFuncRequired": {
+    "prefix": "ptfr",
+    "body": "PropTypes.func.isRequired,",
+    "description": "Func prop type required"
+  },
+  "propTypeNumber": {
+    "prefix": "ptn",
+    "body": "PropTypes.number,",
+    "description": "Number prop type"
+  },
+  "propTypeNumberRequired": {
+    "prefix": "ptnr",
+    "body": "PropTypes.number.isRequired,",
+    "description": "Number prop type required"
+  },
+  "propTypeObject": {
+    "prefix": "pto",
+    "body": "PropTypes.object,",
+    "description": "Object prop type"
+  },
+  "propTypeObjectRequired": {
+    "prefix": "ptor",
+    "body": "PropTypes.object.isRequired,",
+    "description": "Object prop type required"
+  },
+  "propTypeString": {
+    "prefix": "pts",
+    "body": "PropTypes.string,",
+    "description": "String prop type"
+  },
+  "propTypeStringRequired": {
+    "prefix": "ptsr",
+    "body": "PropTypes.string.isRequired,",
+    "description": "String prop type required"
+  },
+  "propTypeSymbol": {
+    "prefix": "ptsy",
+    "body": "PropTypes.symbol,",
+    "description": "Symbol prop type"
+  },
+  "propTypeSymbolRequired": {
+    "prefix": "ptsyr",
+    "body": "PropTypes.symbol.isRequired,",
+    "description": "Symbol prop type required"
+  },
+  "propTypeNode": {
+    "prefix": "ptnd",
+    "body": "PropTypes.node,",
+    "description": "Anything that can be rendered: numbers, strings, elements or an array"
+  },
+  "propTypeNodeRequired": {
+    "prefix": "ptndr",
+    "body": "PropTypes.node.isRequired,",
+    "description": "Anything that can be rendered: numbers, strings, elements or an array required"
+  },
+  "propTypeElement": {
+    "prefix": "ptel",
+    "body": "PropTypes.element,",
+    "description": "React element prop type"
+  },
+  "propTypeElementRequired": {
+    "prefix": "ptelr",
+    "body": "PropTypes.element.isRequired,",
+    "description": "React element prop type required"
+  },
+  "propTypeInstanceOf": {
+    "prefix": "pti",
+    "body": "PropTypes.instanceOf($0),",
+    "description": "Is an instance of a class prop type"
+  },
+  "propTypeInstanceOfRequired": {
+    "prefix": "ptir",
+    "body": "PropTypes.instanceOf($0).isRequired,",
+    "description": "Is an instance of a class prop type required"
+  },
+  "propTypeEnum": {
+    "prefix": "pte",
+    "body": "PropTypes.oneOf(['$0']),",
+    "description": "Prop type limited to specific values by treating it as an enum"
+  },
+  "propTypeEnumRequired": {
+    "prefix": "pter",
+    "body": "PropTypes.oneOf(['$0']).isRequired,",
+    "description": "Prop type limited to specific values by treating it as an enum required"
+  },
+  "propTypeOneOfType": {
+    "prefix": "ptet",
+    "body": "PropTypes.oneOfType([\n\t$0\n]),",
+    "description": "An object that could be one of many types"
+  },
+  "propTypeOneOfTypeRequired": {
+    "prefix": "ptetr",
+    "body": "PropTypes.oneOfType([\n\t$0\n]).isRequired,",
+    "description": "An object that could be one of many types required"
+  },
+  "propTypeArrayOf": {
+    "prefix": "ptao",
+    "body": "PropTypes.arrayOf($0),",
+    "description": "An array of a certain type"
+  },
+  "propTypeArrayOfRequired": {
+    "prefix": "ptaor",
+    "body": "PropTypes.arrayOf($0).isRequired,",
+    "description": "An array of a certain type required"
+  },
+  "propTypeObjectOf": {
+    "prefix": "ptoo",
+    "body": "PropTypes.objectOf($0),",
+    "description": "An object with property values of a certain type"
+  },
+  "propTypeObjectOfRequired": {
+    "prefix": "ptoor",
+    "body": "PropTypes.objectOf($0).isRequired,",
+    "description": "An object with property values of a certain type required"
+  },
+  "propTypeShape": {
+    "prefix": "ptsh",
+    "body": "PropTypes.shape({\n\t$0\n}),",
+    "description": "An object taking on a particular shape"
+  },
+  "propTypeShapeRequired": {
+    "prefix": "ptshr",
+    "body": "PropTypes.shape({\n\t$0\n}).isRequired,",
+    "description": "An object taking on a particular shape required"
+  }
+}

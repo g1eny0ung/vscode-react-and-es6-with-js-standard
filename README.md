@@ -1,5 +1,9 @@
 # react-and-es6-with-js-standard
 
+![Version](https://vsmarketplacebadge.apphb.com/version/g1eny0ung.react-and-es6-with-js-standard.svg)
+![Installs](https://vsmarketplacebadge.apphb.com/installs/g1eny0ung.react-and-es6-with-js-standard.svg)
+![Rating](https://vsmarketplacebadge.apphb.com/rating/g1eny0ung.react-and-es6-with-js-standard.svg)
+
 This extension combines these extensions' features in one with [JS Standard](https://standardjs.com/).
 
 - [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)

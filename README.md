@@ -106,7 +106,7 @@ At the same time, some of useless and unambiguous snippets have been removed.
 | `ptfr→`  | `PropTypes.func.isRequired,` |
 | `ptn→`   | `PropTypes.number,` |
 | `ptnr→`  | `PropTypes.number.isRequired,` |
-| `pto→`   | `PropTypes.object.,` |
+| `pto→`   | `PropTypes.object,` |
 | `ptor→`  | `PropTypes.object.isRequired,` |
 | `pts→`   | `PropTypes.string,` |
 | `ptsr→`  | `PropTypes.string.isRequired,` |

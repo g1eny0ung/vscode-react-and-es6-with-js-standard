@@ -9,7 +9,7 @@ This extension combines these extensions' features in one with [JS Standard](htt
 - [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
 - [Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
 
-At the same time, some of useless and unambiguous snippets have been removed.
+At the same time, some of useless and ambiguous snippets have been removed.
 
 ## Supported languages
 

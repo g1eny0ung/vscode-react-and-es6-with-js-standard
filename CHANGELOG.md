@@ -3,6 +3,9 @@ All notable changes to the "react-and-es6-with-js-standard" extension will be do
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.3] - 2018-03-08
+- Remove unexpected semicolons
+
 ## [1.0.2] - 2018-02-22
 - Fixed typo
 

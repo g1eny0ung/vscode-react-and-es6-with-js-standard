@@ -201,7 +201,7 @@
   "reactReduxComponent": {
     "prefix": "rrc",
     "body":
-      "import React, { Component } from 'react'\nimport PropTypes from 'prop-types'\nimport { connect } from 'react-redux'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n}\n\nfunction mapStateToProps(state) {\n\treturn {\n\n\t}\n}\n\nexport default connect(\n\tmapStateToProps,\n)(${1:componentName})",
+      "import React, { Component } from 'react'\nimport PropTypes from 'prop-types'\nimport { connect } from 'react-redux'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n}\n\nfunction mapStateToProps(state) {\n\treturn {\n\n\t}\n}\n\nexport default connect(\n\tmapStateToProps,\n)(${1:componentName})",
     "description": "Creates a React component class connected to redux"
   },
   "reactClassComponentPropTypes": {
@@ -214,7 +214,7 @@
   "reactPureComponent": {
     "prefix": "rpc",
     "body":
-      "import React, { PureComponent } from 'react'\nimport PropTypes from 'prop-types'\n\nclass ${1:componentName} extends PureComponent {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n}\n\nexport default ${1:componentName}",
+      "import React, { PureComponent } from 'react'\nimport PropTypes from 'prop-types'\n\nclass ${1:componentName} extends PureComponent {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n}\n\nexport default ${1:componentName}",
     "description":
       "Creates a React pure component class with PropTypes and ES6 module system"
   },

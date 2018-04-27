@@ -62,24 +62,18 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | -------: | ------- |
 | `cas→`   | console alert method `console.assert(expression, object)`|
 | `ccl→`   | console clear `console.clear()` |
-| `cco→`   | console count `console.count(label)` |
 | `cer→`   | console error `console.error(object)` |
 | `cgr→`   | console group `console.group(label)` |
 | `cge→`   | console groupEnd `console.groupEnd()` |
 | `clg→`   | console log `console.log(object)` |
-| `ctr→`   | console trace `console.trace(object)` |
 | `cwa→`   | console warn `console.warn` |
 | `cin→`   | console info `console.info` |
-| `clt→`   | console table `console.table` |
 
 ### React
 
 | Trigger  | Content |
 | -------: | ------- |
 | `rcc→`   | class component skeleton |
-| `rrc→`   | class component skeleton with react-redux connect |
-| `rccp→`  | class component skeleton with prop types after the class |
-| `rpc→`   | class pure component skeleton with prop types after the class |
 | `con→`   | class default constructor with props|
 | `est→`   | empty state object |
 | `cwm→`   | `componentWillMount method` |

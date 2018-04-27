@@ -3,6 +3,16 @@ All notable changes to the "react-and-es6-with-js-standard" extension will be do
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.1.0] - 2018-04-27
+- Remove console snippets:
+  - count
+  - trace
+  - table
+- Remove react snippets
+  - rrc (class component skeleton with react-redux connect)
+  - rccp (class component skeleton with prop types after the class)
+  - rpc (class pure component skeleton with prop types after the class)
+
 ## [1.0.4] - 2018-04-12
 - Fixed sst shortcut
 

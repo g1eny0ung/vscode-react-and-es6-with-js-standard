@@ -25,6 +25,9 @@
     "description":
       "Import a specific portion of the module by assigning a local alias in ES6 syntax"
   },
+  
+
+
   "exportNamedFunction": {
     "prefix": "enf",
     "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n}\n",
@@ -46,6 +49,9 @@
       "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
     "description": "Export default class which extends a base one in ES6 syntax"
   },
+
+
+
   "class": {
     "prefix": "cla",
     "body": "class ${1:className} {\n\t${0}\n}",
@@ -76,6 +82,9 @@
     "body": "set ${1:propertyName}(${2:value}) {\n\t${0}\n}",
     "description": "Create a setter property inside a class in ES6 syntax"
   },
+
+
+
   "forEach": {
     "prefix": "fea",
     "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
@@ -113,6 +122,9 @@
     "description":
       "Creates and assigns a local variable using array destructing"
   },
+
+
+
   "setInterval": {
     "prefix": "sti",
     "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms})",
@@ -125,11 +137,17 @@
     "description":
       "Executes the given function after the specified delay in ES6 syntax"
   },
+
+
+
   "promise": {
     "prefix": "prom",
     "body": "new Promise((resolve, reject) => {\n\t${1}\n})",
     "description": "Creates a new Promise in the standard ES6 syntax"
   },
+
+
+
   "consoleAssert": {
     "prefix": "cas",
     "body": "console.assert(${1:expression}, ${2:object})",
@@ -175,13 +193,16 @@
     "description":
       "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
+
+
+
   "reactClassComponent": {
     "prefix": "rcc",
     "body":
       "import React, { Component } from 'react'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1:componentName}",
     "description": "Creates a React component class with ES6 module system"
   },
-  "classConstructor": {
+  "reactClassConstructor": {
     "prefix": "con",
     "body": "constructor(props) {\n\tsuper(props)\n\t$0\n}\n",
     "description":
@@ -254,7 +275,6 @@
     "body": "$1.defaultProps = {\n\t$2\n}",
     "description": "Creates empty defaultProps declaration"
   },
-
 
   "propTypeArray": {
     "prefix": "pta",
@@ -329,12 +349,14 @@
   "propTypeNode": {
     "prefix": "ptnd",
     "body": "PropTypes.node,",
-    "description": "Anything that can be rendered: numbers, strings, elements or an array"
+    "description":
+      "Anything that can be rendered: numbers, strings, elements or an array"
   },
   "propTypeNodeRequired": {
     "prefix": "ptndr",
     "body": "PropTypes.node.isRequired,",
-    "description": "Anything that can be rendered: numbers, strings, elements or an array required"
+    "description":
+      "Anything that can be rendered: numbers, strings, elements or an array required"
   },
   "propTypeElement": {
     "prefix": "ptel",
@@ -359,12 +381,14 @@
   "propTypeEnum": {
     "prefix": "pte",
     "body": "PropTypes.oneOf(['$0']),",
-    "description": "Prop type limited to specific values by treating it as an enum"
+    "description":
+      "Prop type limited to specific values by treating it as an enum"
   },
   "propTypeEnumRequired": {
     "prefix": "pter",
     "body": "PropTypes.oneOf(['$0']).isRequired,",
-    "description": "Prop type limited to specific values by treating it as an enum required"
+    "description":
+      "Prop type limited to specific values by treating it as an enum required"
   },
   "propTypeOneOfType": {
     "prefix": "ptet",

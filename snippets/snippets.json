@@ -22,11 +22,8 @@
   "importAs": {
     "prefix": "ima",
     "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
-    "description":
-      "Import a specific portion of the module by assigning a local alias in ES6 syntax"
+    "description": "Import a specific portion of the module by assigning a local alias in ES6 syntax"
   },
-  
-
 
   "exportNamedFunction": {
     "prefix": "enf",
@@ -45,12 +42,9 @@
   },
   "exportClassExtends": {
     "prefix": "ece",
-    "body":
-      "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
+    "body": "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
     "description": "Export default class which extends a base one in ES6 syntax"
   },
-
-
 
   "class": {
     "prefix": "cla",
@@ -83,8 +77,6 @@
     "description": "Create a setter property inside a class in ES6 syntax"
   },
 
-
-
   "forEach": {
     "prefix": "fea",
     "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
@@ -113,32 +105,24 @@
   "destructingObject": {
     "prefix": "dob",
     "body": "const {${1:propertyName}} = ${2:objectToDestruct}",
-    "description":
-      "Creates and assigns a local variable using object destructing"
+    "description": "Creates and assigns a local variable using object destructing"
   },
   "destructingArray": {
     "prefix": "dar",
     "body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
-    "description":
-      "Creates and assigns a local variable using array destructing"
+    "description": "Creates and assigns a local variable using array destructing"
   },
-
-
 
   "setInterval": {
     "prefix": "sti",
     "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms})",
-    "description":
-      "Executes the given function at specified intervals in ES6 syntax"
+    "description": "Executes the given function at specified intervals in ES6 syntax"
   },
   "setTimeOut": {
     "prefix": "sto",
     "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms})",
-    "description":
-      "Executes the given function after the specified delay in ES6 syntax"
+    "description": "Executes the given function after the specified delay in ES6 syntax"
   },
-
-
 
   "promise": {
     "prefix": "prom",
@@ -146,13 +130,10 @@
     "description": "Creates a new Promise in the standard ES6 syntax"
   },
 
-
-
   "consoleAssert": {
     "prefix": "cas",
     "body": "console.assert(${1:expression}, ${2:object})",
-    "description":
-      "If the specified expression is false, the message is written to the console along with a stack trace"
+    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
   },
   "consoleClear": {
     "prefix": "ccl",
@@ -162,14 +143,12 @@
   "consoleError": {
     "prefix": "cer",
     "body": "console.error(${1:object})",
-    "description":
-      "Displays a message in the console and also includes a stack trace from where the method was called"
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
   },
   "consoleGroup": {
     "prefix": "cgr",
     "body": "console.group('${1:label}')",
-    "description":
-      "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
   },
   "consoleGroupEnd": {
     "prefix": "cge",
@@ -184,76 +163,88 @@
   "consoleWarn": {
     "prefix": "cwa",
     "body": "console.warn(${1:object})",
-    "description":
-      "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
   },
   "consoleInfo": {
     "prefix": "cin",
     "body": "console.info(${1:object})",
-    "description":
-      "Displays a message in the console but also displays a blue information icon along with the logged message"
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
-
-
 
   "reactClassComponent": {
     "prefix": "rcc",
-    "body":
-      "import React, { Component } from 'react'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1:componentName}",
+    "body": "import React, { Component } from 'react'\n\nclass ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1:componentName}",
     "description": "Creates a React component class with ES6 module system"
   },
   "reactClassConstructor": {
     "prefix": "con",
     "body": "constructor(props) {\n\tsuper(props)\n\t$0\n}\n",
-    "description":
-      "Adds a default constructor for the class that contains props as arguments"
+    "description": "Adds a default constructor for the class that contains props as arguments"
   },
   "emptyState": {
     "prefix": "est",
     "body": "this.state = {\n\t$1\n}",
     "description": "Creates empty state object. To be used in a constructor."
   },
+  "getDerivedStateFromProps": {
+    "prefix": "gdsp",
+    "body": "getDerivedStateFromProps(props, state) {\n\t$0\n}\n",
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing."
+  },
+  "getSnapshotBeforeUpdate": {
+    "prefix": "gsbu",
+    "body": "getSnapshotBeforeUpdate(prevProps, prevState) {\n\t$0\n}\n",
+    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed. Any value returned by this lifecycle will be passed as a parameter to componentDidUpdate()"
+  },
   "componentWillMount": {
     "prefix": "cwm",
-    "body": "\ncomponentWillMount() {\n\t$0\n}\n",
-    "description":
-      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+    "body": "componentWillMount() {\n\t$0\n}\n",
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "UNSAFE_componentWillMount": {
+    "prefix": "ucwm",
+    "body": "UNSAFE_componentWillMount() {\n\t$0\n}\n",
+    "description": "(UNSAFE) Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "componentDidMount": {
     "prefix": "cdm",
     "body": "componentDidMount() {\n\t$0\n}\n",
-    "description":
-      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
     "body": "componentWillReceiveProps(nextProps) {\n\t$0\n}\n",
-    "description":
-      "Invoked when a component is receiving new props. This method is not called for the initial render."
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "UNSAFE_componentWillReceiveProps": {
+    "prefix": "ucwr",
+    "body": "UNSAFE_componentWillReceiveProps(nextProps) {\n\t$0\n}\n",
+    "description": "(UNSAFE) Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
     "body": "shouldComponentUpdate(nextProps, nextState) {\n\t$0\n}\n",
-    "description":
-      "Invoked before rendering when new props or state are being received. "
+    "description": "Invoked before rendering when new props or state are being received. "
   },
   "componentWillUpdate": {
     "prefix": "cwup",
     "body": "componentWillUpdate(nextProps, nextState) {\n\t$0\n}\n",
-    "description":
-      "Invoked immediately before rendering when new props or state are being received."
+    "description": "Invoked immediately before rendering when new props or state are being received."
+  },
+  "UNSAFE_componentWillUpdate": {
+    "prefix": "ucwup",
+    "body": "UNSAFE_componentWillUpdate(nextProps, nextState) {\n\t$0\n}\n",
+    "description": "(UNSAFE) Invoked immediately before rendering when new props or state are being received."
   },
   "componentDidUpdate": {
     "prefix": "cdup",
     "body": "componentDidUpdate(prevProps, prevState) {\n\t$0\n}\n",
-    "description":
-      "Invoked immediately after the component's updates are flushed to the DOM."
+    "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "componentWillUnmount": {
     "prefix": "cwun",
     "body": "componentWillUnmount() {\n\t$0\n}\n",
-    "description":
-      "Invoked immediately before a component is unmounted from the DOM."
+    "description": "Invoked immediately before a component is unmounted from the DOM."
   },
   "componentSetStateObject": {
     "prefix": "sst",
@@ -349,14 +340,12 @@
   "propTypeNode": {
     "prefix": "ptnd",
     "body": "PropTypes.node,",
-    "description":
-      "Anything that can be rendered: numbers, strings, elements or an array"
+    "description": "Anything that can be rendered: numbers, strings, elements or an array"
   },
   "propTypeNodeRequired": {
     "prefix": "ptndr",
     "body": "PropTypes.node.isRequired,",
-    "description":
-      "Anything that can be rendered: numbers, strings, elements or an array required"
+    "description": "Anything that can be rendered: numbers, strings, elements or an array required"
   },
   "propTypeElement": {
     "prefix": "ptel",
@@ -381,14 +370,12 @@
   "propTypeEnum": {
     "prefix": "pte",
     "body": "PropTypes.oneOf(['$0']),",
-    "description":
-      "Prop type limited to specific values by treating it as an enum"
+    "description": "Prop type limited to specific values by treating it as an enum"
   },
   "propTypeEnumRequired": {
     "prefix": "pter",
     "body": "PropTypes.oneOf(['$0']).isRequired,",
-    "description":
-      "Prop type limited to specific values by treating it as an enum required"
+    "description": "Prop type limited to specific values by treating it as an enum required"
   },
   "propTypeOneOfType": {
     "prefix": "ptet",

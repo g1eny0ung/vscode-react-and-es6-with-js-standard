@@ -60,12 +60,12 @@ At the same time, some of useless and ambiguous snippets have been removed.
 ### Console methods
 | Trigger  | Content |
 | -------: | ------- |
-| `cas→`   | console alert method `console.assert(expression, object)`|
-| `ccl→`   | console clear `console.clear()` |
-| `cer→`   | console error `console.error(object)` |
-| `cgr→`   | console group `console.group(label)` |
-| `cge→`   | console groupEnd `console.groupEnd()` |
-| `clg→`   | console log `console.log(object)` |
+| `cas→`   | console alert method `console.assert`|
+| `ccl→`   | console clear `console.clear` |
+| `cer→`   | console error `console.error` |
+| `cgr→`   | console group `console.group` |
+| `cge→`   | console groupEnd `console.groupEnd` |
+| `clg→`   | console log `console.log` |
 | `cwa→`   | console warn `console.warn` |
 | `cin→`   | console info `console.info` |
 
@@ -76,11 +76,16 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | `rcc→`   | class component skeleton |
 | `con→`   | class default constructor with props|
 | `est→`   | empty state object |
+| `gdsp→`  | `getDerivedStateFromProps method` |
+| `gsbu→`  | `getSnapshotBeforeUpdate method` |
 | `cwm→`   | `componentWillMount method` |
+| `ucwm→`  | `UNSAFE_componentWillMount method` |
 | `cdm→`   | `componentDidMount method` |
 | `cwr→`   | `componentWillReceiveProps method` |
+| `ucwr→`  | `UNSAFE_componentWillReceiveProps method` |
 | `scu→`   | `shouldComponentUpdate method` |
 | `cwup→`  | `componentWillUpdate method` |
+| `ucwup→` | `UNSAFE_componentWillUpdate method` |
 | `cdup→`  | `componentDidUpdate method` |
 | `cwun→`  | `componentWillUnmount method` |
 | `sst→`   | `this.setState with object as parameter` |
@@ -104,8 +109,8 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | `ptor→`  | `PropTypes.object.isRequired,` |
 | `pts→`   | `PropTypes.string,` |
 | `ptsr→`  | `PropTypes.string.isRequired,` |
-| `ptsy→`   | `PropTypes.symbol,` |
-| `ptsyr→`  | `PropTypes.symbol.isRequired,` |
+| `ptsy→`  | `PropTypes.symbol,` |
+| `ptsyr→` | `PropTypes.symbol.isRequired,` |
 | `ptnd→`  | `PropTypes.node,` |
 | `ptndr→` | `PropTypes.node.isRequired,` |
 | `ptel→`  | `PropTypes.element,` |

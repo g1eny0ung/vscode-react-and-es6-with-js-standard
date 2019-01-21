@@ -74,6 +74,9 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | Trigger  | Content |
 | -------: | ------- |
 | `rcc→`   | class component skeleton |
+| `rccp→`  | class component skeleton with propTypes |
+| `rfc→`   | functional class component skeleton with propTypes |
+| `rfcp→`  | functional class component skeleton |
 | `con→`   | class default constructor with props|
 | `est→`   | empty state object |
 | `gdsp→`  | `getDerivedStateFromProps method` |

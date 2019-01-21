@@ -3,6 +3,9 @@ All notable changes to the "react-and-es6-with-js-standard" extension will be do
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.3.0] - 2019-01-21
+- Add React functional component and proptypes snippets
+
 ## [1.2.0] - 2018-12-12
 - Update React lifecycle methods
 

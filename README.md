@@ -28,6 +28,7 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | `imd→`   | imports only a portion of the module using destructing  `import { rename } from 'fs'` |
 | `ime→`   | imports everything as alias from the module `import * as localAlias from 'fs'` |
 | `ima→`   | imports only a portion of the module as alias `import { rename  as localRename } from 'fs'` |
+||
 | `enf→`   | exports name function `export const log = (parameter) => { console.log(parameter)}` |
 | `edf→`   | exports default function `export default  (parameter) => { console.log(parameter)}` |
 | `ecl→`   | exports default class `export default class Calculator {}` |
@@ -47,8 +48,8 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | Trigger  | Content |
 | -------: | ------- |
 | `fea→`   | forEach loop in ES6 syntax `array.forEach(currentItem => {})`|
-| `fof→`   | for ... of loop `for(const item of object) {}` |
-| `fin→`   | for ... in loop `for(const item in object) {}` |
+| `fof→`   | for ... of loop `for (const item of object) {}` |
+| `fin→`   | for ... in loop `for (const item in object) {}` |
 | `anfn→`  | creates an anonymous function `(params) => {}` |
 | `nfn→`   | creates a named function `const add = (params) => {}` |
 | `dob→`   | destructing object syntax `const {rename} = fs` |
@@ -75,10 +76,11 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | -------: | ------- |
 | `rcc→`   | class component skeleton |
 | `rccp→`  | class component skeleton with propTypes |
-| `rfc→`   | functional class component skeleton with propTypes |
-| `rfcp→`  | functional class component skeleton |
+| `rfc→`   | functional class component skeleton |
+| `rfcp→`  | functional class component skeleton with propTypes |
 | `con→`   | class default constructor with props|
 | `est→`   | empty state object |
+||
 | `gdsp→`  | `getDerivedStateFromProps method` |
 | `gsbu→`  | `getSnapshotBeforeUpdate method` |
 | `cwm→`   | `componentWillMount method` |
@@ -91,8 +93,14 @@ At the same time, some of useless and ambiguous snippets have been removed.
 | `ucwup→` | `UNSAFE_componentWillUpdate method` |
 | `cdup→`  | `componentDidUpdate method` |
 | `cwun→`  | `componentWillUnmount method` |
+||
+| `ust→`    | `useState hook` |
+| `uef→`    | `useEffect hook` |
+| `uco→`    | `useContext hook` |
+||
 | `sst→`   | `this.setState with object as parameter` |
 | `ssf→`   | `this.setState with function as parameter` |
+||
 | `rpt→`   | empty propTypes declaration |
 | `rdp→`   | empty defaultProps declaration |
 

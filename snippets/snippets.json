@@ -148,12 +148,12 @@
   "consoleGroup": {
     "prefix": "cgr",
     "body": "console.group('${1:label}')",
-    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called"
   },
   "consoleGroupEnd": {
     "prefix": "cge",
     "body": "console.groupEnd()",
-    "description": "Closes out the corresponding console.group()."
+    "description": "Closes out the corresponding console.group()"
   },
   "consoleLog": {
     "prefix": "clg",
@@ -183,12 +183,12 @@
   },
   "reactFunctionComponent": {
     "prefix": "rfc",
-    "body": "import React from 'react'\n\nconst ${1} = (props) => (\n\t<div>$0</div>\n)\n\nexport default ${1}",
+    "body": "import React from 'react'\n\nconst ${1} = props => (\n\t<div>$0</div>\n)\n\nexport default ${1}",
     "description": "Creates a React functional component with ES6 module system"
   },
   "reactFunctionComponentPropTypes": {
     "prefix": "rfcp",
-    "body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nconst ${1} = (props) => (\n\t<div>$0</div>\n)\n\n${1}.propTypes = {\n\t$0\n}\n\nexport default ${1}",
+    "body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nconst ${1} = props => (\n\t<div>$0</div>\n)\n\n${1}.propTypes = {\n\t$0\n}\n\nexport default ${1}",
     "description": "Creates a React functional component with PropTypes and ES6 module system"
   },
   "reactClassConstructor": {
@@ -260,6 +260,21 @@
     "prefix": "cwun",
     "body": "componentWillUnmount() {\n\t$0\n}\n",
     "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "useState": {
+    "prefix": "ust",
+    "body": "const [${1:state}, ${2:setState}] = useState(${3:initialState})",
+    "description": "Hook useState, returns a stateful value, and a function to update it"
+  },
+  "useEffect": {
+    "prefix": "uef",
+    "body": "useEffect(${1:didUpdate})",
+    "description": "Hook userEffect, accepts a function that contains imperative, possibly effectful code"
+  },
+  "useContext": {
+    "prefix": "uco",
+    "body": "const ${1:value} = useContext(${2:MyContext})",
+    "description": "Hook useContext, accepts a context object (the value returned from React.createContext) and returns the current context value for that context"
   },
   "componentSetStateObject": {
     "prefix": "sst",

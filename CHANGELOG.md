@@ -4,6 +4,11 @@ All notable changes to the "react-and-es6-with-js-standard" extension will be do
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.4.1] - 2019-10-16
+
+- Add useReducer, useRef
+- Fixes README problems
+
 ## [1.4.0] - 2019-04-22
 
 - Add react hooks

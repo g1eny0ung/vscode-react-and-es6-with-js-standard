@@ -24,7 +24,9 @@
     "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
     "description": "Import a specific portion of the module by assigning a local alias in ES6 syntax"
   },
-
+  //
+  //
+  //
   "exportNamedFunction": {
     "prefix": "enf",
     "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n}\n",
@@ -45,7 +47,9 @@
     "body": "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
     "description": "Export default class which extends a base one in ES6 syntax"
   },
-
+  //
+  //
+  //
   "class": {
     "prefix": "cla",
     "body": "class ${1:className} {\n\t${0}\n}",
@@ -76,7 +80,9 @@
     "body": "set ${1:propertyName}(${2:value}) {\n\t${0}\n}",
     "description": "Create a setter property inside a class in ES6 syntax"
   },
-
+  //
+  //
+  //
   "forEach": {
     "prefix": "fea",
     "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
@@ -112,7 +118,6 @@
     "body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
     "description": "Creates and assigns a local variable using array destructing"
   },
-
   "setInterval": {
     "prefix": "sti",
     "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms})",
@@ -129,7 +134,9 @@
     "body": "new Promise((resolve, reject) => {\n\t${1}\n})",
     "description": "Creates a new Promise in the standard ES6 syntax"
   },
-
+  //
+  //
+  //
   "consoleAssert": {
     "prefix": "cas",
     "body": "console.assert(${1:expression}, ${2:object})",
@@ -170,7 +177,9 @@
     "body": "console.info(${1:object})",
     "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
-
+  //
+  //
+  //
   "reactClassComponent": {
     "prefix": "rcc",
     "body": "import React, { Component } from 'react'\n\nclass ${1} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1}",
@@ -201,6 +210,9 @@
     "body": "this.state = {\n\t$1\n}",
     "description": "Creates empty state object. To be used in a constructor."
   },
+  //
+  //
+  //
   "getDerivedStateFromProps": {
     "prefix": "gdsp",
     "body": "getDerivedStateFromProps(props, state) {\n\t$0\n}\n",
@@ -261,21 +273,37 @@
     "body": "componentWillUnmount() {\n\t$0\n}\n",
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
+  //
+  //
+  //
   "useState": {
     "prefix": "ust",
     "body": "const [${1:state}, ${2:setState}] = useState(${3:initialState})",
-    "description": "Hook useState, returns a stateful value, and a function to update it"
+    "description": "Hook useState. Returns a stateful value, and a function to update it."
   },
   "useEffect": {
     "prefix": "uef",
     "body": "useEffect(${1:didUpdate})",
-    "description": "Hook userEffect, accepts a function that contains imperative, possibly effectful code"
+    "description": "Hook userEffect. Accepts a function that contains imperative, possibly effectful code."
   },
   "useContext": {
     "prefix": "uco",
     "body": "const ${1:value} = useContext(${2:MyContext})",
-    "description": "Hook useContext, accepts a context object (the value returned from React.createContext) and returns the current context value for that context"
+    "description": "Hook useContext. Accepts a context object (the value returned from React.createContext) and returns the current context value for that context."
   },
+  "useReducer": {
+    "prefix": "ure",
+    "body": "const [${1:state}, ${2:dispatch}] = useReducer(${3:reducer}, ${4:initialArg}, ${5:init})",
+    "description": "Hook useReducer. An alternative to useState. Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method. (If you’re familiar with Redux, you already know how this works.)"
+  },
+  "useRef": {
+    "prefix": "uref",
+    "body": "const ${1:refContainer} = useRef(${2:initialValue})",
+    "description": "Hook useRef. Returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component."
+  },
+  //
+  //
+  //
   "componentSetStateObject": {
     "prefix": "sst",
     "body": "this.setState({$0})",
@@ -286,6 +314,9 @@
     "body": "this.setState((state, props) => { return { $0 }})\n",
     "description": "Performs a shallow merge of nextState into current state"
   },
+  //
+  //
+  //
   "propTypes": {
     "prefix": "rpt",
     "body": "$1.propTypes = {\n\t$2\n}",
@@ -296,7 +327,9 @@
     "body": "$1.defaultProps = {\n\t$2\n}",
     "description": "Creates empty defaultProps declaration"
   },
-
+  //
+  //
+  //
   "propTypeArray": {
     "prefix": "pta",
     "body": "PropTypes.array,",

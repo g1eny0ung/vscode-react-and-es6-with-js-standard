@@ -85,7 +85,7 @@ At the same time, some of useless and ambiguous snippets have been removed.
 |   `con→` | class default constructor with props               |
 |   `est→` | empty state object                                 |
 |          |
-|  `gdsp→` | `getDerivedStateFromProps method`                  |
+|  `gdsp→` | `static getDerivedStateFromProps method`           |
 |  `gsbu→` | `getSnapshotBeforeUpdate method`                   |
 |   `cwm→` | `componentWillMount method`                        |
 |  `ucwm→` | `UNSAFE_componentWillMount method`                 |

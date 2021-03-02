@@ -2,31 +2,48 @@
   "import": {
     "prefix": "imp",
     "body": "import ${2:moduleName} from '${1:module}'$0",
-    "description": "Import entire module statement in ES6 syntax"
+    "description": "Imports entire module statement in ES6 syntax"
   },
   "importNoModuleName": {
     "prefix": "imn",
     "body": "import '${1:module}'$0",
-    "description": "Import entire module in ES6 syntax without module name"
+    "description": "Imports entire module in ES6 syntax without module name"
   },
   "importDestructing": {
     "prefix": "imd",
     "body": "import { $2 } from '${1:module}'$0",
-    "description": "Import only a portion of the module in ES6 syntax"
+    "description": "Imports only a portion of the module in ES6 syntax"
   },
   "importEverything": {
     "prefix": "ime",
     "body": "import * as ${2:alias} from '${1:module}'$0",
-    "description": "Import everything as alias from the module in ES6 syntax"
+    "description": "Imports everything as alias from the module in ES6 syntax"
   },
   "importAs": {
     "prefix": "ima",
     "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
-    "description": "Import a specific portion of the module by assigning a local alias in ES6 syntax"
+    "description": "Imports a specific portion of the module by assigning a local alias in ES6 syntax"
   },
-  //
-  //
-  //
+  "require": {
+    "prefix": "rqr",
+    "body": "require('${1:package}')",
+    "description": "Require a package"
+  },
+  "requireToConst": {
+    "prefix": "req",
+    "body": "const ${1:packageName} = require('${1:package}')$0",
+    "description": "Require a package to const"
+  },
+  "moduleExports": {
+    "prefix": "mde",
+    "body": "module.exports = {\n\t$0\n}\n",
+    "description": "Module exports from Common JS, node syntax at ES6"
+  },
+  "exportNamedVariable": {
+    "prefix": "env",
+    "body": "export const ${1:exportVariable} = ${2:localVariable}\n",
+    "description": "Export named variable in ES6 syntax"
+  },
   "exportNamedFunction": {
     "prefix": "enf",
     "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n}\n",
@@ -34,7 +51,7 @@
   },
   "exportDefaultFunction": {
     "prefix": "edf",
-    "body": "export default (${1:params}) => {\n\t$0\n}\n",
+    "body": "export default function ${1:${TM_FILENAME_BASE}}(${2:params}) {\n\t$0\n}\n",
     "description": "Export default function in ES6 syntax"
   },
   "exportClass": {
@@ -84,7 +101,7 @@
   //
   //
   "forEach": {
-    "prefix": "fea",
+    "prefix": "fre",
     "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
     "description": "Creates a forEach statement in ES6 syntax"
   },
@@ -110,12 +127,12 @@
   },
   "destructingObject": {
     "prefix": "dob",
-    "body": "const {${1:propertyName}} = ${2:objectToDestruct}",
+    "body": "const {${2:propertyName}} = ${1:objectToDestruct}",
     "description": "Creates and assigns a local variable using object destructing"
   },
   "destructingArray": {
     "prefix": "dar",
-    "body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
+    "body": "const [${2:propertyName}] = ${1:arrayToDestruct}",
     "description": "Creates and assigns a local variable using array destructing"
   },
   "setInterval": {
@@ -128,54 +145,63 @@
     "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms})",
     "description": "Executes the given function after the specified delay in ES6 syntax"
   },
-
   "promise": {
     "prefix": "prom",
-    "body": "new Promise((resolve, reject) => {\n\t${1}\n})",
-    "description": "Creates a new Promise in the standard ES6 syntax"
+    "body": "return new Promise((resolve, reject) => {\n\t${1}\n})",
+    "description": "Creates and returns a new Promise in the standard ES6 syntax"
+  },
+  "thenCatch": {
+    "prefix": "thenc",
+    "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n})",
+    "description": "Add the .then and .catch methods to handle promises"
   },
   //
   //
   //
   "consoleAssert": {
     "prefix": "cas",
-    "body": "console.assert(${1:expression}, ${2:object})",
-    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
+    "body": "console.assert(${1:assertion}, ${2:obj1})",
+    "description": "Log a message and stack trace to console if the first argument is false."
   },
   "consoleClear": {
     "prefix": "ccl",
     "body": "console.clear()",
-    "description": "Clears the console"
+    "description": "Clears the console."
+  },
+  "consoleDebug": {
+    "prefix": "cde",
+    "body": "console.debug(${1:obj1})",
+    "description": "Outputs a message to the console with the log level debug."
   },
   "consoleError": {
     "prefix": "cer",
-    "body": "console.error(${1:object})",
-    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
+    "body": "console.error(${1:obj1})",
+    "description": "Outputs an error message."
   },
   "consoleGroup": {
     "prefix": "cgr",
-    "body": "console.group('${1:label}')",
-    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called"
+    "body": "console.group()",
+    "description": "Creates a new inline group, indenting all following output by another level. To move back out a level, call groupEnd()."
   },
   "consoleGroupEnd": {
     "prefix": "cge",
     "body": "console.groupEnd()",
-    "description": "Closes out the corresponding console.group()"
-  },
-  "consoleLog": {
-    "prefix": "clg",
-    "body": "console.log(${1:object})",
-    "description": "Displays a message in the console"
-  },
-  "consoleWarn": {
-    "prefix": "cwa",
-    "body": "console.warn(${1:object})",
-    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+    "description": "Exits the current inline group."
   },
   "consoleInfo": {
     "prefix": "cin",
-    "body": "console.info(${1:object})",
-    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+    "body": "console.info(${1:obj1})",
+    "description": "Informative logging of information."
+  },
+  "consoleLog": {
+    "prefix": "clg",
+    "body": "console.log(${1:obj1})",
+    "description": "For general output of logging information."
+  },
+  "consoleWarn": {
+    "prefix": "cwa",
+    "body": "console.warn(${1:obj1})",
+    "description": "Outputs a warning message."
   },
   //
   //
@@ -188,7 +214,7 @@
   "reactClassComponentPropTypes": {
     "prefix": "rccp",
     "body": "import React, { Component } from 'react'\nimport PropTypes from 'prop-types'\n\nclass ${1} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1}.propTypes = {\n\n}\n\nexport default ${1}",
-    "description": "Creates a React component class with PropTypes and ES6 module system"
+    "description": "Creates a React component class with ES6 module system and PropTypes"
   },
   "reactFunctionComponent": {
     "prefix": "rfc",
@@ -198,7 +224,7 @@
   "reactFunctionComponentPropTypes": {
     "prefix": "rfcp",
     "body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nconst ${1} = props => (\n\t<div>$0</div>\n)\n\n${1}.propTypes = {\n\t$0\n}\n\nexport default ${1}",
-    "description": "Creates a React functional component with PropTypes and ES6 module system"
+    "description": "Creates a React functional component with ES6 module system and PropTypes"
   },
   "reactClassConstructor": {
     "prefix": "con",
@@ -213,25 +239,14 @@
   //
   //
   //
-  "getDerivedStateFromProps": {
-    "prefix": "gdsp",
-    "body": "static getDerivedStateFromProps(props, state) {\n\t$0\n}\n",
-    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing."
-  },
-  "getSnapshotBeforeUpdate": {
-    "prefix": "gsbu",
-    "body": "getSnapshotBeforeUpdate(prevProps, prevState) {\n\t$0\n}\n",
-    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed. Any value returned by this lifecycle will be passed as a parameter to componentDidUpdate()"
-  },
   "componentWillMount": {
     "prefix": "cwm",
     "body": "componentWillMount() {\n\t$0\n}\n",
-    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs."
   },
   "UNSAFE_componentWillMount": {
     "prefix": "ucwm",
-    "body": "UNSAFE_componentWillMount() {\n\t$0\n}\n",
-    "description": "(UNSAFE) Invoked once, both on the client and server, immediately before the initial rendering occurs"
+    "body": "UNSAFE_componentWillMount() {\n\t$0\n}\n"
   },
   "componentDidMount": {
     "prefix": "cdm",
@@ -241,27 +256,25 @@
   "componentWillReceiveProps": {
     "prefix": "cwr",
     "body": "componentWillReceiveProps(nextProps) {\n\t$0\n}\n",
-    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render. [DEPRECATION NOTE]: This method is deprecated in React 16.3"
   },
   "UNSAFE_componentWillReceiveProps": {
     "prefix": "ucwr",
-    "body": "UNSAFE_componentWillReceiveProps(nextProps) {\n\t$0\n}\n",
-    "description": "(UNSAFE) Invoked when a component is receiving new props. This method is not called for the initial render."
+    "body": "UNSAFE_componentWillReceiveProps(nextProps) {\n\t$0\n}\n"
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
     "body": "shouldComponentUpdate(nextProps, nextState) {\n\t$0\n}\n",
-    "description": "Invoked before rendering when new props or state are being received. "
+    "description": "Invoked before rendering when new props or state are being received."
   },
   "componentWillUpdate": {
     "prefix": "cwup",
     "body": "componentWillUpdate(nextProps, nextState) {\n\t$0\n}\n",
-    "description": "Invoked immediately before rendering when new props or state are being received."
+    "description": "Invoked immediately before rendering when new props or state are being received. [DEPRECATION NOTE]: This method is deprecated in React 16.3"
   },
   "UNSAFE_componentWillUpdate": {
     "prefix": "ucwup",
-    "body": "UNSAFE_componentWillUpdate(nextProps, nextState) {\n\t$0\n}\n",
-    "description": "(UNSAFE) Invoked immediately before rendering when new props or state are being received."
+    "body": "UNSAFE_componentWillUpdate(nextProps, nextState) {\n\t$0\n}\n"
   },
   "componentDidUpdate": {
     "prefix": "cdup",
@@ -272,6 +285,16 @@
     "prefix": "cwun",
     "body": "componentWillUnmount() {\n\t$0\n}\n",
     "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "getSnapshotBeforeUpdate": {
+    "prefix": "gsbu",
+    "body": "getSnapshotBeforeUpdate(prevProps, prevState) {\n\t$0\n}\n",
+    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM."
+  },
+  "getDerivedStateFromProps": {
+    "prefix": "gdsfp",
+    "body": "static getDerivedStateFromProps(props, state) {\n\t$0\n}\n",
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing."
   },
   //
   //
@@ -296,6 +319,16 @@
     "body": "const [${1:state}, ${2:dispatch}] = useReducer(${3:reducer}, ${4:initialArg}, ${5:init})",
     "description": "Hook useReducer. An alternative to useState. Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method. (If you’re familiar with Redux, you already know how this works.)"
   },
+  "useCallback": {
+    "prefix": "uca",
+    "body": "const ${1:memoizedCallback} = useCallback(() => { ${3:doSomething} }, [${2:deps}])",
+    "description": "Hook useCallback. Returns a memoized callback."
+  },
+  "useMemo": {
+    "prefix": "ume",
+    "body": "const ${1:memoizedValue} = useMemo(() => ${3:computeExpensiveValue}, [${2:deps}])",
+    "description": "Hook useMemo. Returns a memoized value."
+  },
   "useRef": {
     "prefix": "uref",
     "body": "const ${1:refContainer} = useRef(${2:initialValue})",
@@ -306,7 +339,7 @@
   //
   "componentSetStateObject": {
     "prefix": "sst",
-    "body": "this.setState({$0})",
+    "body": "this.setState($0)",
     "description": "Performs a shallow merge of nextState into current state"
   },
   "componentSetStateFunc": {
@@ -319,12 +352,12 @@
   //
   "propTypes": {
     "prefix": "rpt",
-    "body": "$1.propTypes = {\n\t$2\n}",
+    "body": "${1:$TM_FILENAME_BASE}.propTypes = {\n\t$2\n}",
     "description": "Creates empty propTypes declaration"
   },
   "defaultProps": {
     "prefix": "rdp",
-    "body": "$1.defaultProps = {\n\t$2\n}",
+    "body": "${1:$TM_FILENAME_BASE}.defaultProps = {\n\t$2\n}",
     "description": "Creates empty defaultProps declaration"
   },
   //
@@ -391,14 +424,24 @@
     "description": "String prop type required"
   },
   "propTypeSymbol": {
-    "prefix": "ptsy",
+    "prefix": "ptsm",
     "body": "PropTypes.symbol,",
     "description": "Symbol prop type"
   },
   "propTypeSymbolRequired": {
-    "prefix": "ptsyr",
+    "prefix": "ptsmr",
     "body": "PropTypes.symbol.isRequired,",
     "description": "Symbol prop type required"
+  },
+  "propTypeAny": {
+    "prefix": "ptan",
+    "body": "PropTypes.any,",
+    "description": "Any prop type"
+  },
+  "propTypeAnyRequired": {
+    "prefix": "ptanr",
+    "body": "PropTypes.any.isRequired,",
+    "description": "Any prop type required"
   },
   "propTypeNode": {
     "prefix": "ptnd",
@@ -469,6 +512,16 @@
     "prefix": "ptoor",
     "body": "PropTypes.objectOf($0).isRequired,",
     "description": "An object with property values of a certain type required"
+  },
+  "propTypeObjectOfShape": {
+    "prefix": "ptoos",
+    "body": "PropTypes.objectOf(PropTypes.shape($0)),",
+    "description": "An object whose keys are known ahead of time"
+  },
+  "propTypeObjectOfShapeRequired": {
+    "prefix": "ptoosr",
+    "body": "PropTypes.objectOf(PropTypes.shape($0)).isRequired,",
+    "description": "An object whose keys are known ahead of time required"
   },
   "propTypeShape": {
     "prefix": "ptsh",

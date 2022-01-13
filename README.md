@@ -1,4 +1,6 @@
-# react-and-es6-with-js-standard
+# A better choice: [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+
+## (Deprecated) react-and-es6-with-js-standard
 
 ![Version](https://vsmarketplacebadge.apphb.com/version/g1eny0ung.react-and-es6-with-js-standard.svg)
 ![Installs](https://vsmarketplacebadge.apphb.com/installs/g1eny0ung.react-and-es6-with-js-standard.svg)

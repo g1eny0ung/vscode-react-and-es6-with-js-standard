@@ -40,14 +40,14 @@ At the same time, some of useless and ambiguous snippets have been removed.
 
 ### Class helpers
 
-| Trigger | Content                                                         |
-| ------: | --------------------------------------------------------------- |
-|  `cla→` | Create a basic class `class A {}`                               |
-| `clae→` | Create a basic class with extends `class A extends B {}`        |
-|  `con→` | adds default constructor in the class `constructor() {}`        |
-|  `met→` | creates a method inside a class `add() {}`                      |
-|  `pge→` | creates a getter property `get propertyName() { return value }` |
-|  `pse→` | creates a setter property `set propertyName(value) {}`          |
+| Trigger | Content                                                       |
+| ------: | ------------------------------------------------------------- |
+|  `cla→` | Create a basic class `class A {}`                             |
+| `clae→` | Create a basic class with extends `class A extends B {}`      |
+|  `con→` | adds default constructor in the class `constructor() {}`      |
+|  `met→` | creates a method inside a class `add() {}`                    |
+|  `pge→` | creates a getter property `get propertyName() {return value}` |
+|  `pse→` | creates a setter property `set propertyName(value) {}`        |
 
 ### Various methods
 
@@ -67,53 +67,59 @@ At the same time, some of useless and ambiguous snippets have been removed.
 
 ### Console methods
 
-| Trigger | Content                             |
-| ------: | ----------------------------------- |
-|  `cas→` | console assert `console.assert`     |
-|  `ccl→` | console clear `console.clear`       |
-|  `cde→` | console debug `console.debug`       |
-|  `cer→` | console error `console.error`       |
-|  `cgr→` | console group `console.group`       |
-|  `cge→` | console groupEnd `console.groupEnd` |
-|  `cin→` | console info `console.info`         |
-|  `clg→` | console log `console.log`           |
-|  `cwa→` | console warn `console.warn`         |
+| Trigger | Content                                                            |
+| ------: | ------------------------------------------------------------------ |
+|  `cas→` | console alert method `console.assert(expression, object)`          |
+|  `ccl→` | console clear `console.clear()`                                    |
+|  `cdb→` | console debug `console.debug(object)`                              |
+|  `cer→` | console error `console.error(object)`                              |
+|  `cgr→` | console group `console.group(label)`                               |
+|  `cge→` | console groupEnd `console.groupEnd()`                              |
+|  `clg→` | console log `console.log(object)`                                  |
+|  `cwa→` | console warn `console.warn`                                        |
+|  `cin→` | console info `console.info`                                        |
 
 ### React
 
-|  Trigger | Content                                            |
-| -------: | -------------------------------------------------- |
-|   `rcc→` | class component skeleton                           |
-|  `rccp→` | class component skeleton with propTypes            |
-|   `rfc→` | functional class component skeleton                |
-|  `rfcp→` | functional class component skeleton with propTypes |
-|   `con→` | class default constructor with props               |
-|   `est→` | empty state object                                 |
-|   `cwm→` | `componentWillMount method`                        |
-|  `ucwm→` | `UNSAFE_componentWillMount method`                 |
-|   `cdm→` | `componentDidMount method`                         |
-|   `cwr→` | `componentWillReceiveProps method`                 |
-|  `ucwr→` | `UNSAFE_componentWillReceiveProps method`          |
-|   `scu→` | `shouldComponentUpdate method`                     |
-|  `cwup→` | `componentWillUpdate method`                       |
-| `ucwup→` | `UNSAFE_componentWillUpdate method`                |
-|  `cdup→` | `componentDidUpdate method`                        |
-|  `cwun→` | `componentWillUnmount method`                      |
-|  `gsbu→` | `getSnapshotBeforeUpdate method`                   |
-| `gdsfp→` | `static getDerivedStateFromProps method`           |
-|   `ust→` | `useState hook`                                    |
-|   `uef→` | `useEffect hook`                                   |
-|   `uco→` | `useContext hook`                                  |
-|   `ure→` | `useReducer hook`                                  |
-|   `uca→` | `useCallback hook`                                 |
-|   `ume→` | `useMemo hook`                                     |
-|  `uref→` | `useRef hook`                                      |
-|   `sst→` | `this.setState with object as parameter`           |
-|   `ssf→` | `this.setState with function as parameter`         |
-|   `rpt→` | empty propTypes declaration                        |
-|   `rdp→` | empty defaultProps declaration                     |
+|  Trigger | Content                                                          |
+| -------: | ---------------------------------------------------------------- |
+|   `rcc→` | class component skeleton                                         |
+|  `rccp→` | class component skeleton with with prop types after the class    |
+|  `rwwd→` | class component without import statements                        |
+|   `rsc→` | stateless component skeleton                                     |
+|  `rscp→` | stateless component with prop types skeleton                     |
+|  `rscm→` | memoize stateless component skeleton                             |
+| `rscpm→` | memoize stateless component with prop types skeleton             |
+|   `rsf→` | stateless named function skeleton                                |
+|  `rsfp→` | stateless named function with prop types skeleton                |
+|   `rsi→` | stateless component with prop types and implicit return          |
+|   `con→` | class default constructor with props                             |
+|   `est→` | empty state object                                               |
+|   `cwm→` | `componentWillMount method`                                      |
+|  `ucwm→` | `UNSAFE_componentWillMount method`                               |
+|   `cdm→` | `componentDidMount method`                                       |
+|   `cwr→` | `componentWillReceiveProps method`                               |
+|  `ucwr→` | `UNSAFE_componentWillReceiveProps method`                        |
+|   `scu→` | `shouldComponentUpdate method`                                   |
+|  `cwup→` | `componentWillUpdate method`                                     |
+| `ucwup→` | `UNSAFE_componentWillUpdate method`                              |
+|  `cdup→` | `componentDidUpdate method`                                      |
+|  `cwun→` | `componentWillUnmount method`                                    |
+|  `gsbu→` | `getSnapshotBeforeUpdate method`                                 |
+| `gdsfp→` | `static getDerivedStateFromProps method`                         |
+|   `sst→` | `this.setState with object as parameter`                         |
+|   `ssf→` | `this.setState with function as parameter`                       |
+|   `ust→` | `useState hook`                                                  |
+|   `uef→` | `useEffect hook`                                                 |
+|   `uco→` | `useContext hook`                                                |
+|   `ure→` | `useReducer hook`                                                |
+|   `uca→` | `useCallback hook`                                               |
+|   `ume→` | `useMemo hook`                                                   |
+|  `uref→` | `useRef hook`                                                    |
+|   `rpt→` | empty propTypes declaration                                      |
+|   `rdp→` | empty defaultProps declaration                                   |
 
-### React type checking
+### PropTypes
 
 |   Trigger | Content                                                                              |
 | --------: | ------------------------------------------------------------------------------------ |

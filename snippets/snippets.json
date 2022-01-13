@@ -64,9 +64,7 @@
     "body": "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
     "description": "Export default class which extends a base one in ES6 syntax"
   },
-  //
-  //
-  //
+
   "class": {
     "prefix": "cla",
     "body": "class ${1:className} {\n\t${0}\n}",
@@ -85,21 +83,19 @@
   "method": {
     "prefix": "met",
     "body": "${1:methodName}(${2:params}) {\n\t${0}\n}",
-    "description": "Create a method inside a class in ES6 syntax"
+    "description": "Creates a method inside a class in ES6 syntax"
   },
   "propertyGet": {
     "prefix": "pge",
     "body": "get ${1:propertyName}() {\n\treturn this.${0}\n}",
-    "description": "Create a getter property inside a class in ES6 syntax"
+    "description": "Creates a getter property inside a class in ES6 syntax"
   },
   "propertyset": {
     "prefix": "pse",
     "body": "set ${1:propertyName}(${2:value}) {\n\t${0}\n}",
-    "description": "Create a setter property inside a class in ES6 syntax"
+    "description": "Creates a setter property inside a class in ES6 syntax"
   },
-  //
-  //
-  //
+
   "forEach": {
     "prefix": "fre",
     "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
@@ -155,76 +151,102 @@
     "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n})",
     "description": "Add the .then and .catch methods to handle promises"
   },
-  //
-  //
-  //
+
   "consoleAssert": {
     "prefix": "cas",
-    "body": "console.assert(${1:assertion}, ${2:obj1})",
-    "description": "Log a message and stack trace to console if the first argument is false."
+    "body": "console.assert(${1:expression}, ${2:object})",
+    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
   },
   "consoleClear": {
     "prefix": "ccl",
     "body": "console.clear()",
-    "description": "Clears the console."
+    "description": "Clears the console"
   },
   "consoleDebug": {
-    "prefix": "cde",
-    "body": "console.debug(${1:obj1})",
-    "description": "Outputs a message to the console with the log level debug."
+    "prefix": "cdb",
+    "body": "console.debug(${1:object})",
+    "description": "Displays a message in the console. Also display a blue right arrow icon along with the logged message in Safari"
   },
   "consoleError": {
     "prefix": "cer",
-    "body": "console.error(${1:obj1})",
-    "description": "Outputs an error message."
+    "body": "console.error(${1:object})",
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
   },
   "consoleGroup": {
     "prefix": "cgr",
-    "body": "console.group()",
-    "description": "Creates a new inline group, indenting all following output by another level. To move back out a level, call groupEnd()."
+    "body": "console.group('${1:label}')",
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called"
   },
   "consoleGroupEnd": {
     "prefix": "cge",
     "body": "console.groupEnd()",
-    "description": "Exits the current inline group."
-  },
-  "consoleInfo": {
-    "prefix": "cin",
-    "body": "console.info(${1:obj1})",
-    "description": "Informative logging of information."
+    "description": "Closes out the corresponding console.group()"
   },
   "consoleLog": {
     "prefix": "clg",
-    "body": "console.log(${1:obj1})",
-    "description": "For general output of logging information."
+    "body": "console.log(${1:object})",
+    "description": "Displays a message in the console"
   },
   "consoleWarn": {
     "prefix": "cwa",
-    "body": "console.warn(${1:obj1})",
-    "description": "Outputs a warning message."
+    "body": "console.warn(${1:object})",
+    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
   },
-  //
-  //
-  //
+  "consoleInfo": {
+    "prefix": "cin",
+    "body": "console.info(${1:object})",
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+  },
+
   "reactClassComponent": {
     "prefix": "rcc",
-    "body": "import React, { Component } from 'react'\n\nclass ${1} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1}",
+    "body": "import React, { Component } from 'react'\n\nclass ${1:${TM_FILENAME_BASE}} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
     "description": "Creates a React component class with ES6 module system"
   },
   "reactClassComponentPropTypes": {
     "prefix": "rccp",
-    "body": "import React, { Component } from 'react'\nimport PropTypes from 'prop-types'\n\nclass ${1} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1}.propTypes = {\n\n}\n\nexport default ${1}",
-    "description": "Creates a React component class with ES6 module system and PropTypes"
+    "body": "import React, { Component } from 'react'\nimport PropTypes from 'prop-types'\n\nclass ${1:${TM_FILENAME_BASE}} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1:${TM_FILENAME_BASE}}.propTypes = {\n\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a React component class with PropTypes and ES6 module system"
   },
-  "reactFunctionComponent": {
-    "prefix": "rfc",
-    "body": "import React from 'react'\n\nconst ${1} = props => (\n\t<div>$0</div>\n)\n\nexport default ${1}",
-    "description": "Creates a React functional component with ES6 module system"
+  "reactWithWebpackDefaults": {
+    "prefix": "rwwd",
+    "body": "class ${1:${TM_FILENAME_BASE}} extends React.Component {\n\tconstructor(props) {\n\t\tsuper(props)\n\n\t\tthis.state = {}\n\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1:${TM_FILENAME_BASE}}.propTypes = {\n\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a React component class with constructor, empty state, proptypes and export in ES6 module system without imports. (Mostly used when React, Proptypes are provided by webpack provide plugin)"
   },
-  "reactFunctionComponentPropTypes": {
-    "prefix": "rfcp",
-    "body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nconst ${1} = props => (\n\t<div>$0</div>\n)\n\n${1}.propTypes = {\n\t$0\n}\n\nexport default ${1}",
-    "description": "Creates a React functional component with ES6 module system and PropTypes"
+  "reactStateless": {
+    "prefix": "rsc",
+    "body": "import React from 'react'\n\nconst ${1:${TM_FILENAME_BASE}} = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a stateless React component without PropTypes and ES6 module system"
+  },
+  "reactStatelessProps": {
+    "prefix": "rscp",
+    "body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nconst ${1:${TM_FILENAME_BASE}} = props => {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:${TM_FILENAME_BASE}}.propTypes = {\n\t$0\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a stateless React component with PropTypes and ES6 module system"
+  },
+  "reactMemo": {
+    "prefix": "rscm",
+    "body": "import React, { memo } from 'react'\n\nconst ${1:${TM_FILENAME_BASE}} = memo(() => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n})\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a memoized stateless React component without PropTypes and ES6 module system"
+  },
+  "reactMemoProps": {
+    "prefix": "rscpm",
+    "body": "import React, { memo } from 'react'\nimport PropTypes from 'prop-types'\n\nconst ${1:${TM_FILENAME_BASE}} = memo((props) => {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n})\n\n${1:${TM_FILENAME_BASE}}.propTypes = {\n\t$0\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a memoized stateless React component with PropTypes and ES6 module system"
+  },
+  "reactStatelessFunction": {
+    "prefix": "rsf",
+    "body": "import React from 'react'\n\nfunction ${1:${TM_FILENAME_BASE}}(props) {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a stateless React component as a named function without PropTypes"
+  },
+  "reactStatelessFunctionProps": {
+    "prefix": "rsfp",
+    "body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nfunction ${1:${TM_FILENAME_BASE}}(props) {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:${TM_FILENAME_BASE}}.propTypes = {\n\t$0\n}\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a stateless React component as a named function with PropTypes"
+  },
+  "reactStatelessImplicitReturn": {
+    "prefix": "rsi",
+    "body": "import React from 'react'\n\nconst ${1:${TM_FILENAME_BASE}} = (props) => (\n\t\t\t$0\n\t)\n\nexport default ${1:${TM_FILENAME_BASE}}",
+    "description": "Creates a stateless React component without PropTypes and ES6 module system but with Implicit Return and props"
   },
   "reactClassConstructor": {
     "prefix": "con",
@@ -236,13 +258,11 @@
     "body": "this.state = {\n\t$1\n}",
     "description": "Creates empty state object. To be used in a constructor."
   },
-  //
-  //
-  //
+
   "componentWillMount": {
     "prefix": "cwm",
     "body": "componentWillMount() {\n\t$0\n}\n",
-    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs."
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "UNSAFE_componentWillMount": {
     "prefix": "ucwm",
@@ -251,7 +271,7 @@
   "componentDidMount": {
     "prefix": "cdm",
     "body": "componentDidMount() {\n\t$0\n}\n",
-    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs"
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
@@ -265,7 +285,7 @@
   "shouldComponentUpdate": {
     "prefix": "scu",
     "body": "shouldComponentUpdate(nextProps, nextState) {\n\t$0\n}\n",
-    "description": "Invoked before rendering when new props or state are being received."
+    "description": "Invoked before rendering when new props or state are being received"
   },
   "componentWillUpdate": {
     "prefix": "cwup",
@@ -279,26 +299,34 @@
   "componentDidUpdate": {
     "prefix": "cdup",
     "body": "componentDidUpdate(prevProps, prevState) {\n\t$0\n}\n",
-    "description": "Invoked immediately after the component's updates are flushed to the DOM."
+    "description": "Invoked immediately after the component's updates are flushed to the DOM"
   },
   "componentWillUnmount": {
     "prefix": "cwun",
     "body": "componentWillUnmount() {\n\t$0\n}\n",
-    "description": "Invoked immediately before a component is unmounted from the DOM."
+    "description": "Invoked immediately before a component is unmounted from the DOM"
   },
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
     "body": "getSnapshotBeforeUpdate(prevProps, prevState) {\n\t$0\n}\n",
-    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM."
+    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM"
   },
   "getDerivedStateFromProps": {
     "prefix": "gdsfp",
     "body": "static getDerivedStateFromProps(props, state) {\n\t$0\n}\n",
-    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing."
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing"
   },
-  //
-  //
-  //
+  "componentSetStateObject": {
+    "prefix": "sst",
+    "body": "this.setState($0)",
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+  "componentSetStateFunc": {
+    "prefix": "ssf",
+    "body": "this.setState((state, props) => { return { $0 }})\n",
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+
   "useState": {
     "prefix": "ust",
     "body": "const [${1:state}, ${2:setState}] = useState(${3:initialState})",
@@ -334,22 +362,7 @@
     "body": "const ${1:refContainer} = useRef(${2:initialValue})",
     "description": "Hook useRef. Returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component."
   },
-  //
-  //
-  //
-  "componentSetStateObject": {
-    "prefix": "sst",
-    "body": "this.setState($0)",
-    "description": "Performs a shallow merge of nextState into current state"
-  },
-  "componentSetStateFunc": {
-    "prefix": "ssf",
-    "body": "this.setState((state, props) => { return { $0 }})\n",
-    "description": "Performs a shallow merge of nextState into current state"
-  },
-  //
-  //
-  //
+
   "propTypes": {
     "prefix": "rpt",
     "body": "${1:$TM_FILENAME_BASE}.propTypes = {\n\t$2\n}",
@@ -360,9 +373,7 @@
     "body": "${1:$TM_FILENAME_BASE}.defaultProps = {\n\t$2\n}",
     "description": "Creates empty defaultProps declaration"
   },
-  //
-  //
-  //
+
   "propTypeArray": {
     "prefix": "pta",
     "body": "PropTypes.array,",

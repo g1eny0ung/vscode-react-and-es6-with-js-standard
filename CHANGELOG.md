@@ -4,6 +4,10 @@ All notable changes to the "react-and-es6-with-js-standard" extension will be do
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.6.0] - 2022-01-13
+
+- Update lots of snippets
+
 ## [1.5.0] - 2021-03-02
 
 - Update lots of snippets
@@ -15,7 +19,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.4.1] - 2019-10-16
 
 - Add useReducer, useRef
-- Fixes README
+- Fix README
 
 ## [1.4.0] - 2019-04-22
 
@@ -55,7 +59,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [1.0.4] - 2018-04-12
 
-- Fixe sst shortcut
+- Fix sst shortcut
 
 ## [1.0.3] - 2018-03-08
 
@@ -69,7 +73,3 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Add badges in README
 - Fix typo
-
-## [1.0.0] - 2018-02-21
-
-- Initial release

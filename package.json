@@ -1,8 +1,8 @@
 {
     "name": "react-and-es6-with-js-standard",
-    "displayName": "Snippets: React-And-ES6-With-JS-Standard",
+    "displayName": "Snippets: React-and-ES6-With-JS-Standard",
     "description": "Code snippets for React and ES6 with JS Standard",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "publisher": "g1eny0ung",
     "icon": "images/icon.png",
     "license": "SEE LICENSE IN LICENSE",
@@ -26,7 +26,7 @@
         "react",
         "es6",
         "javascript",
-        "standard"
+        "js standard"
     ],
     "contributes": {
         "snippets": [
